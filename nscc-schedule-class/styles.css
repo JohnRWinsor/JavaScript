@@ -1,0 +1,33 @@
+.course-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin:0;
+}
+
+.instructor {
+    margin: 0;
+    font-style: italic;
+    font-size:0.8rem;
+}
+
+.room {
+    margin:0;
+    font-size:1rem;
+    font-variant: small-caps;
+}
+
+td>span {
+    margin:0;
+    float:right;
+    font-size: 0.4rem;
+}
+
+td:hover {
+    background-color: rgba(255, 255, 0, 0.8);
+    cursor: pointer;
+}
+
+* {
+    background-color: cyan;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

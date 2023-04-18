@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Class Schedule</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<link href="styles.css" rel="stylesheet">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+	crossorigin="anonymous" defer></script>
+	<script src="schedule.js" defer></script>
+	<script src="edit.js" defer></script>
+</head>
+
+<body>
+	<!-- The main heading for the schedule -->
+	<h1 class="text-center ">Winter 2023 Schedule</h1>
+	<div class="container-sm">
+		<!-- The table for the schedule -->
+		<table summary="ITPR Year 1 Fall Schedule" class="table table-bordered table-sched" id="sched">
+			<!-- The heading row of the table -->
+			<thead>
+				<caption>Year 1 Second Schedule</caption>
+				<tr class="table-primary">
+					<th scope="col">Time</th>
+					<th scope="col">Monday</th>
+					<th scope="col">Tuesday</th>
+					<th scope="col">Wednesday</th>
+					<th scope="col">Thursday</th>
+					<th scope="col">Friday</th>
+				</tr>
+			</thead>
+			<!-- The body of the table, which contains the actual schedule information -->
+			<tbody>
+				<tr>
+				  <th scope="row">08:30 AM</th>
+				  <td>OSYS 1000</td>
+				  <td>PROG 2007</td>
+				  <td>OSYS 1000</td>
+				  <td></td>
+				  <td>PROG 2007</td>
+				</tr>
+				<!-- Row for the 9:30 AM timeslot -->
+				<tr>
+				  <th scope="row">09:30 AM</th>
+				  <td>OSYS 1000</td>
+				  <td>PROG 2007</td>
+				  <td>OSYS 1000</td>
+				  <td></td>
+				  <td>PROG 2007</td>
+				</tr>
+				<!-- Row for the 10:30 AM timeslot -->
+				<tr>
+				  <th scope="row">10:30 AM</th>
+				  <td>PROG 2700</td>
+				  <td></td>
+				  <td>PROG 1400</td>
+				  <td>PROG 2700</td>
+				  <td>PROG 1400</td>
+				</tr>
+				<!-- Row for the 11:30 AM timeslot (lunch) -->
+				<tr>
+				  <th scope="row">11:30 AM</th>
+				  <td colspan="5" class="text-center table-secondary">Lunch</td>
+				</tr>
+				<!-- Row for the 12:30 PM timeslot -->
+				<tr>
+				  <th scope="row">12:30 AM</th>
+				  <td>PROG 2700</td>
+				  <td></td>
+				  <td>PROG 1400</td>
+				  <td>PROG 2700</td>
+				  <td>PROG 1400</td>
+				</tr>
+				<!-- Row for the 1:30 PM timeslot -->
+				<tr>
+				  <th scope="row">01:30 PM</th>
+				  <td>PROG 2700</td>
+				  <td></td>
+				  <td>PROG 1400</td>
+				  <td>PROG 2700</td>
+				  <td>PROG 1400</td>
+				</tr>
+				<!-- Row for the 2:30 PM timeslot -->
+				<tr>
+				  <th scope="row">02:30 PM</th>
+				  <td>SAAD 1001</td>
+				  <td>APPD 1001</td>
+				  <td>SAAD 1001</td>
+				  <td>COMM 2700</td>
+				  <td></td>
+				</tr>
+				<!-- Row for the 3:30 PM timeslot -->
+				<tr>
+				  <th scope="row">03:30 PM</th>
+				  <td>SAAD 1001</td>
+				  <td>APPD 1001</td>
+				  <td>SAAD 1001</td>
+				  <td>COMM 2700</td>
+				  <td></td>
+				</tr>
+			  </tbody>
+		</table>
+	</div>
+	<!-- This code is  for a card that displays the name of a course along 
+		with some additional text and a button to edit the course.  -->
+	  <div class="card" style="width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title" id="courseName">Course Name</h5>
+            This is some text within a card body.
+            <button class="btn btn-primary" id="btnEdit" data-bs-toggle="modal" data-bs-target="#editCourseModal">Edit
+                Course</button>
+        </div>
+	
+	<!-- This code is for the header section of a modal window that can be used to edit a course. -->
+	<div class="modal" id="editCourseModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Course</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+	<!-- This code is for the body section of a modal window that allows the user to edit the name of a course. -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="courseName">Name</label>
+                        <input type="text" class="form-control" name="courseName" id="txtCourseName"
+                            placeholder="Enter a course name" aria-describedby="courseNameHelp">
+                        <small id="courseNameHelp" class="form-text text-muted">Ex. PROG 2700.</small>
+                    </div>
+	<!-- This code is for a form input element that allows the user to enter the name of a course instructor in a modal window. -->
+                    <div class="form-group">
+                        <label for="courseInstructor">Instructor</label>
+                        <input type="text" class="form-control" name="courseInstructor" id="txtCourseInstructor"
+                            placeholder="Enter course title" aria-describedby="courseInstructorHelp">
+                        <small id="courseInstructorHelp" class="form-text text-muted">Ex. Client Side Programming</small>
+                    </div>
+	<!-- This code creates a form group for the course room field in the edit course modal. -->
+                    <div class="form-group">
+                        <label for="courseRoom">Room</label>
+                        <input type="text" class="form-control" name="courseRoom" id="txtCourseRoom"
+                            placeholder="Enter room" aria-describedby="courseRoomHelp">
+                        <small id="courseRoomHelp" class="form-text text-muted">Ex. COG-114</small>
+                    </div>
+				</div>
+	<!-- This code creates the footer section of the edit course modal. -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="btnSave">Save</button>
+                </div>
+	<!-- This code defines an input element of type "color" with an id of "head" and a name of "head". -->
+				<div>
+					<input type="color" id="head" name="head"
+						   value="#e66465">
+					<label for="head">Course Color</label>
+				</div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Modal dialog for adding a new course -->
+	<button id="add-button" class="btn btn-primary" data-target="#add-modal">Add</button>
+	<div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="add-modal-label" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="add-modal-label">Add Course</h5>
+			<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			<form>
+			  <div class="mb-3">
+				<label for="course-name" class="form-label">Course Name</label>
+				<input type="text" class="form-control" id="course-name" required>
+			  </div>
+			  <div class="mb-3">
+				<label for="course-code" class="form-label">Course Code</label>
+				<input type="text" class="form-control" id="course-code" required>
+			  </div>
+			  <div class="mb-3">
+				<label for="start-time" class="form-label">Start Time</label>
+				<input type="time" class="form-control" id="start-time" required>
+			  </div>
+			  <div class="mb-3">
+				<label for="end-time" class="form-label">End Time</label>
+				<input type="time" class="form-control" id="end-time" required>
+			  </div>
+			</form>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+			<button type="button" class="btn btn-primary" id="save-button">Save</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</body>
+
+</html>
