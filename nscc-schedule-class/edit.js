@@ -85,7 +85,7 @@ let timeslotLut = {
     "3-4": 1,
     "3-5": 7,
     "3-6": 6,
-    "3-7": 1,
+    "3-7": 5,
     "3-8": 3,
 
 
@@ -105,7 +105,7 @@ let timeslotLut = {
     "5-4": 1,
     "5-5": 6,
     "5-6": 2,
-    "5-7": 1,
+    "5-7": 5,
     "5-8": 4,
 
 }
@@ -221,28 +221,27 @@ function updateCourse(evt) {
 */
 // Add event listener to the Add button
 const addButton = document.getElementById("add-button");
-addButton.addEventListener("click", function() {
-  // Show the modal
-  const modal = document.querySelector("#add-modal");
-  const modalInstance = new bootstrap.Modal(modal);
-  modalInstance.show();
+addButton.addEventListener("click", function () {
+    // Show the modal
+    const modal = document.querySelector("#add-modal");
+    const modalInstance = new bootstrap.Modal(modal);
+    modalInstance.show();
 
-  // Get the values of the input fields when the Save button is clicked
-  const saveButton = document.getElementById("save-button");
-  saveButton.addEventListener("click", function() {
-    const courseName = document.getElementById("course-name").value;
-    const courseCode = document.getElementById("course-code").value;
-    const startTime = document.getElementById("start-time").value;
-    const endTime = document.getElementById("end-time").value;
-    
-    // Do something with the values such as add them to an array or send them to the server
-    console.log(courseName, courseCode, startTime, endTime);
-    
-    // Close the modal
-    modalInstance.hide();
-  });
+    // Get the values of the input fields when the Save button is clicked
+    const saveButton = document.getElementById("save-button");
+    saveButton.addEventListener("click", function () {
+        const courseName = document.getElementById("course-name").value;
+        const courseCode = document.getElementById("course-code").value;
+        const startTime = document.getElementById("start-time").value;
+        const endTime = document.getElementById("end-time").value;
+
+        // Do something with the values such as add them to an array or send them to the server
+        console.log(courseName, courseCode, startTime, endTime);
+
+        // Close the modal
+        modalInstance.hide();
+    });
 });
-
 /**********************************************
  *              Event Listeners
 **********************************************/
